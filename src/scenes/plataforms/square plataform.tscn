@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://4hjaw44ddcfx"]
+
+[ext_resource type="Texture2D" uid="uid://b60uxnuskko13" path="res://Proyecto-MUR-V2/_assets/sprites/Dungeon Tile Set.png" id="1_a40pp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw2dd"]
+atlas = ExtResource("1_a40pp")
+region = Rect2(160, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ons6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw2dd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkjnr"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ons6g")
+
+[node name="Line2D" type="Line2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jkjnr")
